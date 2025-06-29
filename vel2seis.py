@@ -234,6 +234,7 @@ def a2d_mod_abc24_t_batched(vel, nbc, dx, nt, dt, s, isx_i, isz_i, igx, igz, isF
         seis[:, it] = p[batch_indices.view(-1, 1), igz, igx]
         p0, p1 = p1, p
 
+    seis = seis.astype(torch.float16)
     return seis
 
 class SeismicGeometry:
