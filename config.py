@@ -14,9 +14,9 @@ cfg.backbone = "convnext_large.fb_in22k_ft_in1k"
 # cfg.backbone = "caformer_b36.sail_in22k_ft_in1k"
 
 # caformer_b36.sail_in22k_ft_in1k
-cfg.pretrained_weights = "/kaggle/input/openfwi-preprocessed-72x72/models_1000x70/unet2d_caformer_seed3_epochbest.pt"
+cfg.pretrained_weights = "./weights/unet2d_caformer_seed3_epochbest.pt"
 # convnext_small.fb_in22k_ft_in1k
-cfg.pretrained_weights = "/kaggle/input/simple-further-finetuned-bartley-open-models/bartley_unet2d_convnext_seed1_epochbest_FT.pth"
+cfg.pretrained_weights = "./weights/bartley_unet2d_convnext_seed1_epochbest_FT.pth"
 
 cfg.ema = True
 cfg.ema_decay = 0.99
