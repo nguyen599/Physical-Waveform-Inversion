@@ -47,7 +47,7 @@ class CustomDataset(torch.utils.data.Dataset):
 
     def load_metadata(self):
         # Select rows
-        df = pd.read_csv("/kaggle/input/openfwi-preprocessed-72x72/folds.csv")
+        df = pd.read_csv(f"{cfg.data_path}/folds.csv")
         if self.cfg.subsample is not None:
             df = df.groupby(["dataset", "fold"]).head(self.cfg.subsample)
         if self.mode == "train":
