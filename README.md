@@ -6,6 +6,8 @@ A deep learning approach to solve full-waveform inversion (FWI) problems using p
 
 Full-Waveform Inversion (FWI) is a computational method to reconstruct subsurface velocity models from seismic data. This project leverages state-of-the-art deep learning architectures combined with physics-based constraints to achieve accurate velocity model predictions.
 
+![FWI Illustration](./data.png)
+
 ## Key Features
 
 - **Physics-Guided Learning**: Combines data-driven deep learning with physical wave propagation modeling
@@ -104,6 +106,8 @@ torchrun --nproc_per_node=NUM_GPUS train_lightning_fabric.py
 
 ### Physics Simulation
 
+Original Matlab implementation can found at [here](https://csim.kaust.edu.sa/files/SeismicInversion/Chapter.FD/lab.FD2.8/lab.html).
+
 The `vel2seis.py` module provides differentiable seismic wave propagation:
 
 ```python
@@ -169,32 +173,3 @@ seismograms = geom.simulate(velocity_model)
 2. **Domain-Adapted Architecture**: Modified ConvNeXt/MetaFormer stems and normalization for seismic data
 3. **Multi-Source Geometry**: Batched simulation supporting multiple source positions simultaneously
 4. **Differentiable Physics**: Fully differentiable wave equation solver for end-to-end training
-
-## License
-
-This project is provided for research and educational purposes.
-
-## Citation
-
-If you use this code in your research, please cite:
-
-```bibtex
-@misc{waveform-inversion-ml,
-  author = {Your Name},
-  title = {Physics-Guided Machine Learning for Full-Waveform Inversion},
-  year = {2024},
-  publisher = {GitHub},
-  url = {https://github.com/yourusername/Waveform-Inversion}
-}
-```
-
-## Acknowledgments
-
-- OpenFWI dataset creators
-- timm library by Ross Wightman
-- MONAI framework
-- PyTorch Lightning team
-
-## Contact
-
-For questions or issues, please open an issue on GitHub.
